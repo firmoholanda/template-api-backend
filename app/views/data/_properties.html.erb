@@ -1,0 +1,21 @@
+<h4>users:</h4>
+<table class="table p-3 mb-3 table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">owner</th>
+      <th scope="col">address</th>
+      <th scope="col">property_type</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% Property.all.each do |property| %>
+    <tr>
+      <td ><%= property.id %></td>
+      <td ><%= property.owner %></td>
+      <td ><%= property.address %></td>
+      <td ><%= property.property_type %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
