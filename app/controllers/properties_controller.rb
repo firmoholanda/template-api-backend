@@ -36,7 +36,7 @@ class PropertiesController < ApplicationController
     end
 
     def property_params
-        # params.permit(:owner, :address, :country, :tax_number, :fips_code, :property_type, :year_build, :units, :lot_size)
-        params.permit(:owner, :address)
+        #params.permit(:owner, :address, :country, :tax_number, :fips_code, :property_type, :year_build, :units, :lot_size, :created_at, :updated_at)
+        params.permit(:id, :owner, :address)
     end
 end

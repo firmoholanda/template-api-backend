@@ -70,3 +70,5 @@ yarn-debug.log*
 tmp/*
 log/*
 .DS_Store
+*.log
+tmp/cache/*
