@@ -67,8 +67,9 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+# personal
+.DS_Store
 tmp/*
 log/*
-.DS_Store
 *.log
-tmp/cache/*
