@@ -1,0 +1,25 @@
+<h4 class="p-3 m-3">properties:</h4>
+<table class="table p-3 m-3 table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">owner</th>
+      <th scope="col">address</th>
+      <th scope="col">property_type</th>
+      <th scope="col">show</th>
+      <th scope="col">edit</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% Property.all.each do |property| %>
+    <tr>
+      <td ><%= property.id %></td>
+      <td ><%= property.owner %></td>
+      <td ><%= property.address %></td>
+      <td ><%= property.property_type %></td>
+      <td><%= link_to 'show', property %></td>
+      <td><%= link_to 'edit', edit_property_path(property) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
