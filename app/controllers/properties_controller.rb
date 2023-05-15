@@ -1,42 +1,71 @@
 class PropertiesController < ApplicationController
-    before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: %i[ show edit update destroy ]
 
-    def index
-        @properties = Property.all
-        render json: @properties
+  # GET /properties or /properties.json
+  def index
+    @properties = Property.all
+  end
+
+  # GET /properties/1 or /properties/1.json
+  def show
+    render json: @property
+  end
+
+  # GET /properties/new
+  def new
+    @property = Property.new
+  end
+
+  # GET /properties/1/edit
+  def edit
+  end
+
+  # POST /properties or /properties.json
+  def create
+    @property = Property.new(property_params)
+
+    respond_to do |format|
+      if @property.save
+        format.html { redirect_to property_url(@property), notice: "Property was successfully created." }
+        format.json { render :show, status: :created, location: @property }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @property.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    def show
-        render json: @property
+  # PATCH/PUT /properties/1 or /properties/1.json
+  def update
+    respond_to do |format|
+      if @property.update(property_params)
+        format.html { redirect_to property_url(@property), notice: "Property was successfully updated." }
+        format.json { render :show, status: :ok, location: @property }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @property.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    # GET /properties/1/edit
-     def edit
-     end  
+  # DELETE /properties/1 or /properties/1.json
+  def destroy
+    @property.destroy
 
-    def create
-        @property = Property.create(property_params)
-        render json: @property
+    respond_to do |format|
+      format.html { redirect_to properties_url, notice: "Property was successfully destroyed." }
+      format.json { head :no_content }
     end
+  end
 
-    def update
-        @property.update(property_params)
-        render json: @property
-    end
-
-    def destroy
-        @properties = Property.all
-        @property.destroy
-        render json: @properties
-    end
-
-    private    
+  private
+    # Use callbacks to share common setup or constraints between actions.
     def set_property
-        @property = Property.find(params[:id])
+      @property = Property.find(params[:id])
     end
 
+    # Only allow a list of trusted parameters through.
     def property_params
-        # params.permit(:owner, :address, :country, :tax_number, :fips_code, :property_type, :year_build, :units, :lot_size, :created_at, :updated_at)
-        params.permit(:owner, :address, :property_type)
+        params.require(:property).permit(:owner, :address, :property_type)
     end
 end

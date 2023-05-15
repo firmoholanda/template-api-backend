@@ -1,20 +1,24 @@
-<%= form_with(model: @property, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :owner %>
-    <%= form.text_field :owner %>
-  </div>
+<%= form_with(model: @property) do |f| %>
+<div class="card m-3">
+  <div class="card-body">
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+    <div class="mb-3">
+      <%= f.label :owner, { class: "form-label"} %>
+      <%= f.text_field :owner, { class: "form-control", placeholder: "owner" } %>
+    </div>
 
-  <div class="field">
-    <%= form.label :property_type %>
-    <%= form.text_field :property_type %>
-  </div>
+    <div class="mb-3">
+      <%= f.label :address, { class: "form-label"} %>
+      <%= f.text_field :address, { class: "form-control", placeholder: "address" } %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "edit", class: "btn btn-primary" %>
+    <div class="mb-3">
+      <%= f.label :property_type, { class: "form-label"} %>
+      <%= f.text_field :property_type, { class: "form-control", placeholder: "property type" } %>
+    </div>
+
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
   </div>
+</div>
 <% end %>
