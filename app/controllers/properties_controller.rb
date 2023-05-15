@@ -1,13 +1,18 @@
 class PropertiesController < ApplicationController
+    before_action :set_property, only: [:show, :edit, :update, :destroy]
+
     def index
         @properties = Property.all
         render json: @properties
     end
 
     def show
-        @property = Property.find(params[:id])
         render json: @property
     end
+
+    # GET /properties/1/edit
+     def edit
+     end  
 
     def create
         @property = Property.create(property_params)
@@ -15,21 +20,23 @@ class PropertiesController < ApplicationController
     end
 
     def update
-        @property = Property.find(params[:id])
         @property.update(property_params)
         render json: @property
     end
 
     def destroy
         @properties = Property.all
-        @property = Property.find(params[:id])
         @property.destroy
         render json: @properties
     end
 
-    private
+    private    
+    def set_property
+        @property = Property.find(params[:id])
+    end
 
     def property_params
-        params.require(:address).permit(:owner, :address, :country, :tax_number, :fips_code, :property_type, :year_build, :units, :lot_size)
+        # params.permit(:owner, :address, :country, :tax_number, :fips_code, :property_type, :year_build, :units, :lot_size)
+        params.permit(:owner, :address)
     end
 end
