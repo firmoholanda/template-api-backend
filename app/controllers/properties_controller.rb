@@ -4,6 +4,7 @@ class PropertiesController < ApplicationController
   # GET /properties or /properties.json
   def index
     @properties = Property.all
+    render json: @properties
   end
 
   # GET /properties/1 or /properties/1.json
