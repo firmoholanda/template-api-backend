@@ -1,6 +1,6 @@
-# 📃 parceled-app-backend
+# 📃 template-api-backend
 
-api for bookstore-react-redux front-end app. this rest api allows us to manage database resources. a signed user can: add, remove, list, and update books as well as select a favorite book.
+api for template-api-backend front-end app. this rest api allows us to manage database resources. a signed user can: add, remove, list, and update books as well as select a favorite book.
 
 
 ## 📡 technologies used
@@ -16,17 +16,17 @@ css, ruby, rails, SQLite, git was used on this project.
 
 ## 🚀 the project
 
-this project can be found in https://github.com/firmoholanda/parceled-app-backend
+this project can be found in https://github.com/firmoholanda/template-api-backend
 
 
-### ✨ [api documentation](https://github.com/firmoholanda/parceled-app-backend#readme)
+### ✨ [api documentation](https://github.com/firmoholanda/template-api-backend#readme)
 
 
 ## 🔨 instructions
 
 to get started with the app, clone the repo:
 ```
-$ git@github.com:firmoholanda/parceled-app-backend.git
+$ git@github.com:firmoholanda/template-api-backend.git
 ```
 
 install dependencies:
@@ -77,9 +77,9 @@ http GET localhost:3000/properties
 
 ## 🤝 contributing
 
-contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](hhttps://github.com/firmoholanda/parceled-app-backend/development/issues).
+contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](hhttps://github.com/firmoholanda/template-api-backend/development/issues).
 
-1. fork it (https://github.com/firmoholanda/parceled-app-backend/development/fork)
+1. fork it (https://github.com/firmoholanda/template-api-backend/development/fork)
 2. create your working branch (git checkout -b [choose-a-name])
 3. commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. push to the branch (git push origin [chosen-name])
@@ -101,4 +101,4 @@ give a ⭐️ if you like this project!
 
 ## 📝 license
 
-this project is [MIT](https://github.com/firmoholanda/parceled-app-backend/development/license.txt) licensed.
+this project is [MIT](https://github.com/firmoholanda/template-api-backend/development/license.txt) licensed.

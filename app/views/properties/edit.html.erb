@@ -1,0 +1,9 @@
+<h2 class="p-3">editing property</h2>
+
+<%= render 'form', property: @property %>
+
+<div class="p-3">
+  <%= link_to 'home', root_path %>
+  <%= link_to 'delete', method: :delete, data: { confirm: 'are you sure?' } %>
+</div>
+
